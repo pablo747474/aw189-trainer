@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AW189 Trainer</title>
+<style>
+body{font-family:-apple-system;padding:20px;max-width:600px;margin:auto}
+button{width:100%;padding:14px;margin:8px 0;font-size:16px;border-radius:8px}
+.correct{background:#d7f7d7}
+.wrong{background:#ffd6d6}
+.card{border:1px solid #ccc;border-radius:10px;padding:15px;margin-top:20px}
+#explanation{margin-top:10px;font-style:italic}
+</style>
+</head>
+<body>
+
+<h2>AW189 RFM Trainer</h2>
+<select id="section"></select>
+
+<div class="card">
+<h3 id="q"></h3>
+<div id="a"></div>
+<div id="explanation"></div>
+</div>
+
+<p id="score"></p>
+
+<script>
+function make(prefix,exp){
+let arr=[];
+for(let i=1;i<=20;i++){
+arr.push({
+q:`${prefix} Question ${i}`,
+a:["A","B","C","D"],
+correct:Math.floor(Math.random()*4),
+e:exp});
+}
+return arr;
+}
+
+const bank={
+Limitations:make("Limitations","Check RFM limits table."),
+Engines:make("Engines","Review CT7 engines and FADEC."),
+Fuel:make("Fuel","Automatic transfer logic."),
+Electrical:make("Electrical","Starter generators supply DC."),
+Hydraulics:make("Hydraulics","Three independent systems."),
+AFCS:make("AFCS","4-axis stabilisation system."),
+Performance:make("Performance","Use charts for planning.")
+};
+
+let qs=[],i=0,s=0;
+
+const sel=document.getElementById("section");
+Object.keys(bank).forEach(k=>{
+let o=document.createElement("option");
+o.textContent=k;o.value=k;sel.appendChild(o);
+});
+
+function start(){
+qs=[...bank[sel.value]].sort(()=>Math.random()-0.5);
+i=0;s=0;next();
+}
+
+function next(){
+document.getElementById("explanation").textContent="";
+if(i>=qs.length){
+document.getElementById("q").textContent="Section complete";
+document.getElementById("a").innerHTML="";
+return;
+}
+let q=qs[i];
+document.getElementById("q").textContent=q.q;
+let box=document.getElementById("a");
+box.innerHTML="";
+q.a.forEach((t,n)=>{
+let b=document.createElement("button");
+b.textContent=t;
+b.onclick=()=>{
+if(n===q.correct){
+b.className="correct";s++;
+document.getElementById("explanation").textContent="Correct — "+q.e;
+}else{
+b.className="wrong";
+document.getElementById("explanation").textContent="Incorrect — "+q.e;
+}
+setTimeout(()=>{i++;next();},1200);
+};
+box.appendChild(b);
+});
+document.getElementById("score").textContent=`Score ${s}/${i}`;
+}
+
+sel.onchange=start;
+start();
+</script>
+
+</body>
+</html>
