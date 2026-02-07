@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AW189 Trainer</title>
 <style>
-body{font-family:-apple-system;padding:20px;max-width:600px;margin:auto}
+body{font-family:-apple-system;padding:20px;max-width:650px;margin:auto}
 button{width:100%;padding:14px;margin:8px 0;font-size:16px;border-radius:8px}
 .correct{background:#d7f7d7}
 .wrong{background:#ffd6d6}
@@ -14,7 +14,7 @@ button{width:100%;padding:14px;margin:8px 0;font-size:16px;border-radius:8px}
 </head>
 <body>
 
-<h2>AW189 RFM Trainer</h2>
+<h2>AW189 Type Rating Trainer</h2>
 <select id="section"></select>
 
 <div class="card">
@@ -26,27 +26,217 @@ button{width:100%;padding:14px;margin:8px 0;font-size:16px;border-radius:8px}
 <p id="score"></p>
 
 <script>
-function make(prefix,exp){
-let arr=[];
-for(let i=1;i<=20;i++){
-arr.push({
-q:`${prefix} Question ${i}`,
-a:["A","B","C","D"],
-correct:Math.floor(Math.random()*4),
-e:exp});
-}
-return arr;
-}
 
-const bank={
-Limitations:make("Limitations","Check RFM limits table."),
-Engines:make("Engines","Review CT7 engines and FADEC."),
-Fuel:make("Fuel","Automatic transfer logic."),
-Electrical:make("Electrical","Starter generators supply DC."),
-Hydraulics:make("Hydraulics","Three independent systems."),
-AFCS:make("AFCS","4-axis stabilisation system."),
-Performance:make("Performance","Use charts for planning.")
+const bank = {
+
+"Limitations":[
+
+{q:"Maximum passenger seating in a standard high-density AW189 layout is approximately:",
+a:["12","16","18–19","24"],correct:2,
+e:"The AW189 is typically configured for up to 18–19 passengers depending on layout and mission kit."},
+
+{q:"Maximum rotor RPM limits are primarily protected by:",
+a:["Manual throttle control","Mechanical governors","FADEC logic and VEMD monitoring","Hydraulic relief valves"],
+correct:2,
+e:"Rotor/engine limits are electronically managed by FADEC and monitored through VEMD indications."},
+
+{q:"Maximum takeoff mass is limited by:",
+a:["Cabin floor strength only","Performance and structural limits","Fuel tank size","Hydraulic pressure"],
+correct:1,
+e:"MTOM is defined by structural capability and performance certification limits."},
+
+{q:"Flight into known icing is permitted when:",
+a:["Never","Only below 5000 ft","Ice protection systems are operative","In cruise only"],
+correct:2,
+e:"The aircraft is certified for FIKI when the full ice protection system is serviceable."},
+
+{q:"Maximum crosswind limits are published in the:",
+a:["MEL","RFM Limitations","HUMS manual","Wiring diagram"],
+correct:1,
+e:"All operational limits are found in the RFM Limitations section."},
+
+{q:"Category A operations primarily ensure:",
+a:["Fuel economy","Reduced noise","Obstacle clearance following OEI","Passenger comfort"],
+correct:2,
+e:"Category A guarantees safe reject or continued takeoff performance with one engine inoperative."},
+
+{q:"If a limitation is exceeded you should:",
+a:["Continue flight","Log it later","Follow RFM procedures immediately","Ignore if temporary"],
+correct:2,
+e:"Exceeding limits requires immediate action per RFM and maintenance reporting."},
+
+{q:"Maximum baggage weight limits protect:",
+a:["CG and structural loading","Only passenger comfort","Hydraulics","Avionics cooling"],
+correct:0,
+e:"Baggage affects CG and structural loads."},
+
+{q:"Minimum crew for most offshore ops is:",
+a:["Single pilot","Two pilots","Three crew","Pilot + engineer only"],
+correct:1,
+e:"Normal commercial operations require two pilots."},
+
+{q:"Rotor brake may be applied:",
+a:["In flight","At any RPM","Only below specified NR","During taxi"],
+correct:2,
+e:"Rotor brake use is restricted to very low rotor speeds to avoid damage."},
+
+{q:"VEMD provides:",
+a:["Engine and systems monitoring","Flight controls","Hydraulic pressure only","Fuel transfer only"],
+correct:0,
+e:"Vehicle & Engine Multifunction Display centralizes system monitoring."},
+
+{q:"Limitations take precedence over:",
+a:["Checklist notes","Performance charts","All other procedures","ATC instructions"],
+correct:2,
+e:"Limitations are mandatory and override procedures."},
+
+{q:"Operating outside CG limits mainly affects:",
+a:["Paint wear","Handling and stability","Fuel flow","Radio range"],
+correct:1,
+e:"CG outside limits degrades controllability and stability."},
+
+{q:"Maximum door-open airspeed protects:",
+a:["Noise levels","Structural integrity of doors","Fuel burn","Autopilot"],
+correct:1,
+e:"Door limitations prevent structural damage."},
+
+{q:"HUMS primarily provides:",
+a:["Real-time flight control","Health and usage monitoring","Navigation","Weather radar"],
+correct:1,
+e:"HUMS tracks component health and exceedances."},
+
+{q:"OEI ratings are time limited to:",
+a:["Reduce wear and prevent overheating","Improve fuel economy","Reduce vibration only","Meet ATC requirements"],
+correct:0,
+e:"High power OEI ratings are time limited to protect engines."},
+
+{q:"If ice protection fails in icing:",
+a:["Continue normally","Climb only","Exit icing conditions","Switch off electrics"],
+correct:2,
+e:"You must leave icing if protection is unavailable."},
+
+{q:"Max demonstrated wind limits are:",
+a:["Advisory only","Hard limitations","Maintenance limits","Cabin limits"],
+correct:0,
+e:"Demonstrated values guide but are not structural limitations."},
+
+{q:"Power assurance checks verify:",
+a:["Fuel quantity","Engine health/performance margin","Hydraulics","Battery life"],
+correct:1,
+e:"They ensure engines can achieve required power."},
+
+{q:"Limitation markings on instruments are:",
+a:["Optional","Color coded","Maintenance only","Hidden menus"],
+correct:1,
+e:"Color arcs/lines depict operating ranges and limits."}
+],
+
+"Engines & FADEC":[
+
+{q:"The AW189 uses which engines?",
+a:["PW210A","CT7-2F1","RTM322","PT6T"],
+correct:1,
+e:"The AW189 is powered by two GE CT7-2F1 turboshaft engines."},
+
+{q:"Engine control is provided by:",
+a:["Manual mixture control","Hydromechanical only","Dual channel FADEC","Cable throttle"],
+correct:2,
+e:"Full Authority Digital Engine Control manages fuel scheduling automatically."},
+
+{q:"FADEC failure results in:",
+a:["Immediate shutdown","Manual reversion mode","Loss of all power","Battery discharge only"],
+correct:1,
+e:"Reversion modes allow continued manual control."},
+
+{q:"Power matching between engines is automatic via:",
+a:["Hydraulics","Fuel crossfeed","FADEC logic","Rotor brake"],
+correct:2,
+e:"FADEC balances torque outputs."},
+
+{q:"Start sequencing is controlled by:",
+a:["Pilot timing","Starter only","FADEC automatic logic","External GPU"],
+correct:2,
+e:"FADEC manages fuel introduction and light-off timing."},
+
+{q:"OEI contingency rating is used:",
+a:["For cruise","After one engine failure","For start only","For descent"],
+correct:1,
+e:"Provides maximum available power after engine loss."},
+
+{q:"TOT limits protect against:",
+a:["Compressor stall","Overtemperature damage","Fuel starvation","Low oil pressure"],
+correct:1,
+e:"Temperature limits protect turbine components."},
+
+{q:"Engine trend monitoring helps detect:",
+a:["Cabin leaks","Performance deterioration","Autopilot faults","Fuel imbalance only"],
+correct:1,
+e:"Trends highlight early degradation."},
+
+{q:"Fuel scheduling is primarily based on:",
+a:["Pilot guess","Rotor RPM only","FADEC inputs (Ng, T, torque)","Hydraulic pressure"],
+correct:2,
+e:"Multiple parameters determine fuel flow."},
+
+{q:"Starter-generator provides:",
+a:["Hydraulic pressure","Electrical power and starting torque","Fuel pressure","Cooling air"],
+correct:1,
+e:"It cranks the engine and then generates electrical power."},
+
+{q:"Engine anti-ice uses:",
+a:["Electrical heaters only","Bleed air","Hydraulic heat","Fuel heaters"],
+correct:1,
+e:"Bleed air heats inlet components."},
+
+{q:"Dual channel FADEC improves:",
+a:["Weight","Redundancy","Fuel burn only","Noise"],
+correct:1,
+e:"Redundant channels enhance reliability."},
+
+{q:"Ng indicates:",
+a:["Rotor RPM","Gas generator speed","Torque","Fuel flow"],
+correct:1,
+e:"Ng is core speed of the gas generator."},
+
+{q:"Torque indicates:",
+a:["Temperature","Engine load/output","Fuel temp","Voltage"],
+correct:1,
+e:"Torque shows power delivered to the gearbox."},
+
+{q:"If one FADEC channel fails:",
+a:["Engine stops","Automatic switch to remaining channel","Manual restart required","Hydraulics fail"],
+correct:1,
+e:"The remaining channel continues control."},
+
+{q:"Engine oil pressure ensures:",
+a:["Cooling and lubrication","Fuel atomisation","Ignition","Rotor braking"],
+correct:0,
+e:"Oil lubricates and cools bearings and gears."},
+
+{q:"Power assurance checks compare:",
+a:["Rotor RPM only","Actual vs expected performance","Fuel quantity","Battery voltage"],
+correct:1,
+e:"They confirm engine capability against charts."},
+
+{q:"Hot starts are prevented by:",
+a:["Manual timing only","FADEC temperature monitoring","Fuel pump switches","Rotor brake"],
+correct:1,
+e:"FADEC cuts fuel if temperatures rise too quickly."},
+
+{q:"Bleed air extraction reduces:",
+a:["Electrical load","Available power slightly","Fuel weight","Cabin pressure only"],
+correct:1,
+e:"Bleed air reduces available engine power."},
+
+{q:"Engine fire detection uses:",
+a:["Visual check","Temperature sensing loops","Fuel pressure","Torque sensors"],
+correct:1,
+e:"Fire loops detect high temperatures in nacelles."}
+]
+
 };
+
+// ---------------- logic ----------------
 
 let qs=[],i=0,s=0;
 
@@ -72,6 +262,7 @@ let q=qs[i];
 document.getElementById("q").textContent=q.q;
 let box=document.getElementById("a");
 box.innerHTML="";
+
 q.a.forEach((t,n)=>{
 let b=document.createElement("button");
 b.textContent=t;
@@ -83,16 +274,17 @@ document.getElementById("explanation").textContent="Correct — "+q.e;
 b.className="wrong";
 document.getElementById("explanation").textContent="Incorrect — "+q.e;
 }
-setTimeout(()=>{i++;next();},1200);
+setTimeout(()=>{i++;next();},1400);
 };
 box.appendChild(b);
 });
+
 document.getElementById("score").textContent=`Score ${s}/${i}`;
 }
 
 sel.onchange=start;
 start();
-</script>
 
+</script>
 </body>
 </html>
