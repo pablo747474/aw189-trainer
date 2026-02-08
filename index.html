@@ -439,6 +439,422 @@ e:"Indicates potential electrical overheating or short circuit."},
 a:["Speed","Comfort","Reliability and safety","Range only"],
 correct:2,
 e:"Multiple power sources ensure continued operation after faults."}
+],
+
+  "Hydraulics":[
+
+{q:"How many main hydraulic systems are installed on the AW189?",
+a:["1","2","3","4"],correct:2,
+e:"Three independent hydraulic systems provide redundancy for flight controls."},
+
+{q:"Primary purpose of the hydraulic systems is to:",
+a:["Cool engines","Power flight controls and servos","Generate electricity","Transfer fuel"],
+correct:1,
+e:"Hydraulics provide the force required to move flight control actuators."},
+
+{q:"Loss of one hydraulic system results in:",
+a:["Immediate loss of control","Reduced redundancy but continued control","Engine shutdown","Rotor overspeed"],
+correct:1,
+e:"Remaining systems maintain control with degraded redundancy."},
+
+{q:"Hydraulic pressure is normally provided by:",
+a:["Gravity","Electric fans","Engine-driven pumps","Fuel pumps"],
+correct:2,
+e:"Engine-driven pumps supply system pressure."},
+
+{q:"Accumulators are installed to:",
+a:["Store fuel","Store hydraulic energy and dampen pressure spikes","Cool fluid","Vent air"],
+correct:1,
+e:"They smooth fluctuations and provide short-term backup pressure."},
+
+{q:"A hydraulic leak is hazardous primarily because it:",
+a:["Reduces radio range","Can lead to loss of system pressure and fire risk","Increases fuel burn","Affects lighting"],
+correct:1,
+e:"Loss of fluid reduces pressure and may create a fire hazard."},
+
+{q:"Hydraulic quantity is monitored on:",
+a:["Circuit breaker panel","VEMD synoptic page","Standby compass","AFCS only"],
+correct:1,
+e:"The VEMD shows quantity and pressure indications."},
+
+{q:"Servo actuators use hydraulic pressure to:",
+a:["Measure torque","Move flight controls","Drive generators","Heat fuel"],
+correct:1,
+e:"Servos convert hydraulic pressure into mechanical movement."},
+
+{q:"If two hydraulic systems fail, control forces will:",
+a:["Decrease","Be unchanged","Increase significantly","Disappear completely"],
+correct:2,
+e:"Without hydraulic assistance, manual forces rise substantially."},
+
+{q:"Hydraulic cooling is achieved mainly by:",
+a:["Bleed air","Fuel heat exchange/airflow","Electrical fans only","Rotor wash only"],
+correct:1,
+e:"Heat exchangers and airflow remove heat from the fluid."},
+
+{q:"Filters in hydraulic systems protect:",
+a:["Electrical wiring","Components from contamination","Fuel pumps","Batteries"],
+correct:1,
+e:"Contaminants can damage valves and actuators."},
+
+{q:"Low pressure warnings indicate:",
+a:["Pump overheating only","Loss of system capability","High temperature only","Normal operation"],
+correct:1,
+e:"Low pressure suggests pump failure or fluid loss."},
+
+{q:"Redundancy in hydraulics primarily improves:",
+a:["Weight","Speed","Flight safety","Fuel flow"],
+correct:2,
+e:"Multiple systems prevent total loss of control."},
+
+{q:"Hydraulic isolation valves are used to:",
+a:["Increase pressure","Separate a failed section","Transfer fuel","Start engines"],
+correct:1,
+e:"Isolation prevents loss of the entire system."},
+
+{q:"Manual reversion means:",
+a:["Hydraulic boost only","Mechanical-only control","Autopilot control","Electrical-only flight"],
+correct:1,
+e:"Controls operate mechanically without hydraulic assistance."},
+
+{q:"System pressure is typically measured in:",
+a:["PSI or bar","Volts","RPM","Litres"],
+correct:0,
+e:"Hydraulic pressure is expressed in PSI or bar."},
+
+{q:"Foaming of hydraulic fluid may indicate:",
+a:["Low battery","Air ingestion or leak","High fuel flow","Normal condition"],
+correct:1,
+e:"Air in the system reduces effectiveness."},
+
+{q:"Hydraulic pumps are normally:",
+a:["Cabin mounted","Engine accessory driven","Battery powered only","Rotor driven"],
+correct:1,
+e:"They are mounted on the engine gearbox."},
+
+{q:"Flight control feel systems simulate:",
+a:["Hydraulic pressure","Natural aerodynamic feedback","Fuel flow","Engine torque"],
+correct:1,
+e:"Artificial feel provides realistic control feedback."},
+
+{q:"After a hydraulic caution, the first action is to:",
+a:["Ignore it","Increase speed","Follow the RFM checklist","Shut both engines down"],
+correct:2,
+e:"Always apply the appropriate procedure from the RFM."}
+],
+
+
+
+"AFCS":[
+
+{q:"The AW189 AFCS provides how many axes of stabilisation?",
+a:["2","3","4","5"],correct:2,
+e:"Pitch, roll, yaw and collective axes are controlled."},
+
+{q:"Basic function of the AFCS is to:",
+a:["Increase fuel flow","Reduce pilot workload and stabilise flight","Control hydraulics","Monitor engines"],
+correct:1,
+e:"AFCS improves stability and reduces workload."},
+
+{q:"Hover hold uses inputs from:",
+a:["Fuel sensors","GPS/INS and air data","Hydraulic pumps","Batteries only"],
+correct:1,
+e:"Position and motion sensors allow accurate hover stabilisation."},
+
+{q:"Attitude hold maintains:",
+a:["Heading only","Selected pitch/roll attitude","Altitude only","Torque only"],
+correct:1,
+e:"The system holds the commanded attitude."},
+
+{q:"Upper modes override:",
+a:["Lower modes","Fuel system","Hydraulics","Engines"],
+correct:0,
+e:"Higher modes take priority in the control hierarchy."},
+
+{q:"Autopilot servo inputs act through:",
+a:["Electrical motors only","Hydraulic actuators","Fuel valves","Rotor brake"],
+correct:1,
+e:"Servos command the hydraulic flight controls."},
+
+{q:"Heading hold maintains:",
+a:["Ground speed","Selected heading","Altitude","Torque"],
+correct:1,
+e:"Yaw channel keeps the aircraft on selected heading."},
+
+{q:"A failed AFCS channel typically results in:",
+a:["Immediate loss of control","Reversion to basic or degraded mode","Engine flameout","Fuel imbalance"],
+correct:1,
+e:"System degrades gracefully with reduced functions."},
+
+{q:"Trim release allows the pilot to:",
+a:["Disconnect fuel pumps","Reposition controls without resistance","Increase torque","Switch generators"],
+correct:1,
+e:"It temporarily removes servo forces for repositioning."},
+
+{q:"Coupled approaches reduce:",
+a:["Fuel burn","Pilot workload","Hydraulic demand","Noise"],
+correct:1,
+e:"Automation reduces manual input requirement."},
+
+{q:"Go-around mode commands:",
+a:["Descent","Climb attitude/power","Yaw only","Idle power"],
+correct:1,
+e:"GA provides a safe climb profile."},
+
+{q:"SAS stands for:",
+a:["Servo Actuator System","Stability Augmentation System","Static Alignment Source","Safety Alert Signal"],
+correct:1,
+e:"SAS provides short-term stability damping."},
+
+{q:"AFCS disengagement warning alerts the pilot to:",
+a:["Normal operation","Loss of autopilot assistance","Fuel imbalance","Hydraulic pressure"],
+correct:1,
+e:"Pilot must manually control aircraft."},
+
+{q:"Altitude hold uses:",
+a:["Cabin pressure","Barometric/air data inputs","Fuel temperature","Rotor brake"],
+correct:1,
+e:"Barometric data maintains altitude."},
+
+{q:"Automatic transition modes assist during:",
+a:["Refuelling","Takeoff/approach/hover transitions","Shutdown","Maintenance only"],
+correct:1,
+e:"Modes smooth transitions between flight regimes."},
+
+{q:"Yaw control primarily uses:",
+a:["Collective only","Tail rotor pedals/servo","Fuel valves","Batteries"],
+correct:1,
+e:"Tail rotor inputs control yaw."},
+
+{q:"Loss of AFCS increases:",
+a:["Automation","Manual workload","Fuel capacity","Battery life"],
+correct:1,
+e:"Pilot must manually stabilise the aircraft."},
+
+{q:"Coupled navigation modes follow:",
+a:["Cabin lights","Flight plan or nav source","Fuel pumps","HUMS data"],
+correct:1,
+e:"AFCS tracks selected navigation guidance."},
+
+{q:"Flight director provides:",
+a:["Control forces","Visual guidance cues","Fuel data","Hydraulic pressure"],
+correct:1,
+e:"FD bars show command guidance."},
+
+{q:"Before engaging AFCS you should verify:",
+a:["Doors open","System status and trim set","Fuel low","Rotor brake on"],
+correct:1,
+e:"Proper trim and healthy system status ensure smooth engagement."}
+],
+
+
+
+"Ice & Environmental":[
+
+{q:"The AW189 is certified for flight into known icing when:",
+a:["Never","Only below freezing level","Ice protection systems are operative","Cabin heat on"],
+correct:2,
+e:"Certification requires all ice protection systems functioning."},
+
+{q:"Engine intake anti-ice uses:",
+a:["Electrical mats","Bleed air heating","Fuel heaters","Hydraulic heat"],
+correct:1,
+e:"Bleed air prevents ice formation in intakes."},
+
+{q:"Rotor blade de-ice is typically:",
+a:["Chemical only","Electrical heating mats","Bleed air only","Mechanical boots"],
+correct:1,
+e:"Electrical heating elements remove ice from blades."},
+
+{q:"Ice accumulation mainly increases:",
+a:["Lift","Drag and weight","Fuel flow efficiency","Battery voltage"],
+correct:1,
+e:"Ice degrades aerodynamics and increases drag."},
+
+{q:"Pitot/static icing causes:",
+a:["Navigation improvement","Erroneous airspeed/altitude indications","Fuel imbalance","Hydraulic leaks"],
+correct:1,
+e:"Blocked sensors give false instrument readings."},
+
+{q:"Windshield anti-ice prevents:",
+a:["Fogging only","Ice accretion and visibility loss","Fuel heating","Electrical faults"],
+correct:1,
+e:"Heating maintains visibility and safety."},
+
+{q:"If ice protection fails in icing conditions you should:",
+a:["Continue flight","Descend only","Exit icing conditions","Increase speed"],
+correct:2,
+e:"Leave icing immediately per procedures."},
+
+{q:"Bleed air use for anti-ice slightly:",
+a:["Increases power","Reduces available engine power","Improves fuel burn","Stops hydraulics"],
+correct:1,
+e:"Bleed air extraction reduces engine performance margin."},
+
+{q:"Cabin pressurisation on the AW189 is:",
+a:["Fully pressurised","Unpressurised/ventilated","Vacuum type","Nitrogen filled"],
+correct:1,
+e:"The cabin is ventilated but not pressurised."},
+
+{q:"Air conditioning provides:",
+a:["Fuel cooling","Cabin temperature control","Hydraulic cooling","Rotor cooling"],
+correct:1,
+e:"Environmental system controls cabin comfort."},
+
+{q:"Heater operation uses:",
+a:["Bleed air heat exchange","Battery heaters","Fuel combustion only","Hydraulic pumps"],
+correct:0,
+e:"Bleed air provides heating."},
+
+{q:"Ice shedding from rotors may cause:",
+a:["Better lift","Vibration","Lower torque","Fuel leak"],
+correct:1,
+e:"Uneven shedding causes imbalance and vibration."},
+
+{q:"OAT probes are heated to:",
+a:["Increase accuracy in icing","Cool air","Reduce drag","Save power"],
+correct:0,
+e:"Heating prevents ice buildup on sensors."},
+
+{q:"Environmental system failures primarily affect:",
+a:["Flight controls","Comfort and visibility","Fuel flow","Generators"],
+correct:1,
+e:"They impact crew/passenger comfort rather than flight safety directly."},
+
+{q:"Window demist prevents:",
+a:["Freezing fuel","Condensation/fogging","Battery discharge","Hydraulic leaks"],
+correct:1,
+e:"Demist keeps windows clear."},
+
+{q:"Ice protection checks should be performed:",
+a:["After landing only","Before entering icing","Only in cruise","Never"],
+correct:1,
+e:"Verify serviceability prior to icing exposure."},
+
+{q:"Ice increases stall speed because:",
+a:["Lift increases","Wing/rotor efficiency decreases","Weight decreases","RPM increases"],
+correct:1,
+e:"Contaminated surfaces produce less lift."},
+
+{q:"Tail rotor icing can cause:",
+a:["Better control","Reduced yaw authority","Lower fuel burn","Electrical faults"],
+correct:1,
+e:"Ice reduces tail rotor effectiveness."},
+
+{q:"Bleed air valves regulate:",
+a:["Fuel flow","Temperature and pressure to anti-ice","Battery charge","Hydraulic flow"],
+correct:1,
+e:"Valves control airflow for heating."},
+
+{q:"Environmental system synoptics are shown on:",
+a:["Compass","VEMD/MFD","Rotor brake panel","Circuit breaker panel"],
+correct:1,
+e:"System status is displayed on multifunction screens."}
+],
+
+
+
+"Performance":[
+
+{q:"Category A takeoff planning ensures:",
+a:["Shortest taxi","Safe OEI capability","Lowest fuel burn","Maximum speed"],
+correct:1,
+e:"Cat A ensures safe reject or continued takeoff after engine failure."},
+
+{q:"Performance charts are primarily based on:",
+a:["Pilot experience","Flight test data","Fuel price","Passenger count only"],
+correct:1,
+e:"Charts come from certified flight testing."},
+
+{q:"Higher gross weight generally results in:",
+a:["Better climb","Reduced performance","Lower torque","Lower fuel burn"],
+correct:1,
+e:"More weight reduces climb and hover capability."},
+
+{q:"High density altitude causes:",
+a:["Improved lift","Reduced engine and rotor performance","Higher torque margin","Better fuel flow"],
+correct:1,
+e:"Less dense air reduces lift and engine output."},
+
+{q:"IGE hover performance is better than OGE because:",
+a:["Less drag near ground","More fuel flow","More bleed air","Lower RPM"],
+correct:0,
+e:"Ground effect reduces induced drag."},
+
+{q:"OEI climb data is used for:",
+a:["Cruise only","Engine failure planning","Refuelling","Taxi speed"],
+correct:1,
+e:"Ensures obstacle clearance after engine loss."},
+
+{q:"Torque limits protect:",
+a:["Fuel pumps","Transmission and drivetrain","Cabin","Battery"],
+correct:1,
+e:"Excess torque can damage gearbox components."},
+
+{q:"Takeoff decision point determines:",
+a:["Fuel burn","Reject or continue decision","Rotor speed","Cabin temperature"],
+correct:1,
+e:"Defines safe continue/reject boundary."},
+
+{q:"Wind improves performance when:",
+a:["Tailwind","Headwind","Crosswind only","Calm only"],
+correct:1,
+e:"Headwind increases effective airflow and lift."},
+
+{q:"Anti-ice use generally:",
+a:["Improves climb","Reduces available power","Reduces weight","Improves speed"],
+correct:1,
+e:"Bleed air extraction lowers power margin."},
+
+{q:"Performance class depends on:",
+a:["Paint colour","Regulatory requirements and capability","Battery type","Cabin layout"],
+correct:1,
+e:"Defined by certification and operational rules."},
+
+{q:"Landing distance increases with:",
+a:["Headwind","Higher weight","Lower altitude","Lower temperature"],
+correct:1,
+e:"More weight requires more power and distance."},
+
+{q:"Pressure altitude is derived from:",
+a:["GPS only","Altimeter setting 1013 hPa/29.92","Fuel gauges","Compass"],
+correct:1,
+e:"Standard pressure reference is used."},
+
+{q:"Climb performance is worst at:",
+a:["Low temp/light weight","High temp/heavy weight/high altitude","Sea level/cold day","Low DA"],
+correct:1,
+e:"High DA and heavy weight severely reduce climb."},
+
+{q:"Charts should be corrected for:",
+a:["Colour only","Weight, altitude, temperature, wind","Passenger names","Battery age"],
+correct:1,
+e:"All environmental and loading factors affect performance."},
+
+{q:"Hover ceiling indicates:",
+a:["Max cruise altitude","Highest altitude for hover","Fuel limit","Cabin pressure"],
+correct:1,
+e:"Shows altitude where hover is possible."},
+
+{q:"Exceeding performance limits may result in:",
+a:["Better efficiency","Inability to maintain flight","Lower torque","Quieter operation"],
+correct:1,
+e:"Aircraft may not sustain required performance."},
+
+{q:"Gross weight reduction improves:",
+a:["Fuel burn only","All aspects of performance","Electrical load","Hydraulic pressure"],
+correct:1,
+e:"Lower weight improves climb, hover and margins."},
+
+{q:"Performance planning should always use:",
+a:["Memory","Worst-case conditions","Best case only","Previous flight data only"],
+correct:1,
+e:"Conservative planning ensures safety margins."},
+
+{q:"Before every takeoff you should:",
+a:["Skip charts","Check performance limits","Only check fuel","Rely on AFCS"],
+correct:1,
+e:"Performance calculations are mandatory before departure."}
 ]
 
 };
