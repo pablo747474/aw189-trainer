@@ -232,6 +232,213 @@ e:"Bleed air reduces available engine power."},
 a:["Visual check","Temperature sensing loops","Fuel pressure","Torque sensors"],
 correct:1,
 e:"Fire loops detect high temperatures in nacelles."}
+],
+
+  "Fuel":[
+
+{q:"Normal fuel transfer between tanks is:",
+a:["Manual only","Gravity only","Automatic via transfer pumps/logic","Not possible in flight"],
+correct:2,
+e:"The system automatically balances tanks using transfer pumps and logic to maintain CG and supply."},
+
+{q:"Fuel quantity indication is provided on:",
+a:["Standby analog gauges only","VEMD","Circuit breaker panel","AFCS display only"],
+correct:1,
+e:"Fuel quantity and system synoptics are displayed on the VEMD."},
+
+{q:"Crossfeed allows:",
+a:["Hydraulic balancing","Either engine to be supplied from any tank","Battery charging","Oil transfer"],
+correct:1,
+e:"Crossfeed permits either engine to receive fuel from the opposite side for redundancy."},
+
+{q:"Fuel boost pumps primarily:",
+a:["Increase fuel temperature","Provide positive pressure to engine feed","Transfer oil","Vent tanks"],
+correct:1,
+e:"Boost pumps ensure adequate pressure to prevent cavitation and vapour formation."},
+
+{q:"If a boost pump fails, the main risk is:",
+a:["Overheating","Flameout from fuel starvation","Electrical overload","Rotor overspeed"],
+correct:1,
+e:"Loss of positive pressure may cause vapour lock or interruption of supply."},
+
+{q:"Low fuel caution alerts the crew to:",
+a:["Pump overheating","Imbalance only","Minimum usable fuel remaining","Fuel contamination"],
+correct:2,
+e:"Low level sensors trigger when usable fuel approaches reserve levels."},
+
+{q:"Fuel temperature limits exist to prevent:",
+a:["Overcooling of engines","Filter icing or waxing","Battery drain","Cabin heating issues"],
+correct:1,
+e:"Cold fuel can form wax crystals or ice, restricting flow."},
+
+{q:"Refuel/defuel operations are normally controlled through:",
+a:["FADEC panel","Ground refuel panel","AFCS console","HUMS"],
+correct:1,
+e:"External refuel panel allows safe ground refuelling control."},
+
+{q:"Fuel system venting prevents:",
+a:["Pump overspeed","Tank pressurisation or vacuum damage","Fuel heating","Crossfeed failure"],
+correct:1,
+e:"Vents maintain near-ambient tank pressure."},
+
+{q:"Fuel imbalance primarily affects:",
+a:["Radio range","CG and lateral balance","Engine temperature","Hydraulic pressure"],
+correct:1,
+e:"Uneven tanks shift CG and can affect handling."},
+
+{q:"Contamination checks should look for:",
+a:["Colour only","Water and particulates","Fuel smell","Temperature"],
+correct:1,
+e:"Water or debris can cause engine damage or flameout."},
+
+{q:"Fuel filters are monitored by:",
+a:["Chip detectors","Clog/ΔP indications","Rotor tachometer","Battery sensors"],
+correct:1,
+e:"Differential pressure indicators show filter blockage."},
+
+{q:"During suction feed only operations:",
+a:["Performance improves","Fuel pressure margin is reduced","Fuel burns slower","Crossfeed unavailable"],
+correct:1,
+e:"Without pumps, suction feed provides less positive pressure margin."},
+
+{q:"Automatic transfer logic is designed mainly to:",
+a:["Reduce workload and maintain balance","Increase speed","Cool fuel","Improve lubrication"],
+correct:0,
+e:"The system automatically balances fuel and reduces pilot management tasks."},
+
+{q:"Fuel shutoff valves are used to:",
+a:["Adjust mixture","Isolate an engine or tank","Increase pressure","Vent tanks"],
+correct:1,
+e:"They allow isolation during emergencies or maintenance."},
+
+{q:"Hot refuelling requires:",
+a:["Rotors stopped","Ground power only","Strict procedures and bonding/earthing","Crossfeed open"],
+correct:2,
+e:"Hot refuelling requires safety bonding and procedural control."},
+
+{q:"A sudden drop in fuel pressure may indicate:",
+a:["Low battery","Pump or line issue","Hydraulic leak","Rotor overspeed"],
+correct:1,
+e:"Loss of pump or blockage can reduce pressure."},
+
+{q:"Usable fuel excludes:",
+a:["Fuel in feed lines","Trapped/unpumpable fuel","Auxiliary tanks","Transfer fuel"],
+correct:1,
+e:"Unusable fuel cannot be delivered to engines."},
+
+{q:"Fuel system redundancy primarily increases:",
+a:["Weight","Safety and dispatch reliability","Speed","Noise"],
+correct:1,
+e:"Multiple pumps/feeds ensure continuous supply."},
+
+{q:"In case of fuel leak indication you should first:",
+a:["Increase power","Turn on all pumps","Follow RFM procedure and isolate source","Ignore if minor"],
+correct:2,
+e:"Immediate checklist action isolates the affected section to reduce fire risk."}
+],
+
+
+"Electrical":[
+
+{q:"Primary DC electrical power is supplied by:",
+a:["Batteries only","Starter-generators","Static inverters only","External GPU only"],
+correct:1,
+e:"Engine-driven starter-generators provide main DC power once running."},
+
+{q:"Batteries are primarily used for:",
+a:["Cruise power","Starting and emergency backup","Hydraulics","Cabin heating"],
+correct:1,
+e:"They provide start power and essential backup supply."},
+
+{q:"Generators come online:",
+a:["Before start","Automatically after engine stabilises","Only manually","After landing"],
+correct:1,
+e:"They automatically connect once parameters are within limits."},
+
+{q:"AC power for some systems is produced by:",
+a:["Transformers/inverters","Hydraulics","Fuel pumps","Rotor brake"],
+correct:0,
+e:"Inverters convert DC to AC for avionics and other loads."},
+
+{q:"If one generator fails:",
+a:["All power lost","Remaining generator carries load","Engines stop","Hydraulics fail"],
+correct:1,
+e:"Load shedding and remaining generation maintain essential power."},
+
+{q:"Essential buses ensure:",
+a:["Cabin lighting only","Critical systems remain powered","Entertainment systems work","Better fuel flow"],
+correct:1,
+e:"Essential buses supply flight critical equipment during failures."},
+
+{q:"Load shedding automatically:",
+a:["Adds more systems","Disconnects non-essential loads","Stops engines","Charges batteries faster"],
+correct:1,
+e:"Non-essential equipment is removed to preserve power."},
+
+{q:"External power is typically used for:",
+a:["Cruise flight","Ground servicing and start","Emergency only","Fuel balancing"],
+correct:1,
+e:"GPU provides power without running engines."},
+
+{q:"Battery temperature monitoring prevents:",
+a:["Over-voltage only","Thermal runaway/overheating","Low fuel","Rotor overspeed"],
+correct:1,
+e:"Batteries can overheat; monitoring protects safety."},
+
+{q:"Electrical synoptics are displayed on:",
+a:["Standby compass","VEMD/MFD pages","Circuit breakers only","Rotor tach"],
+correct:1,
+e:"System pages show power flow and status."},
+
+{q:"Circuit breakers protect against:",
+a:["Low voltage","Overcurrent faults","Fuel leaks","Hydraulic loss"],
+correct:1,
+e:"CBs open when current exceeds limits to protect wiring."},
+
+{q:"Starter-generator functions include:",
+a:["Starting only","Generating only","Both start and generate","Fuel heating"],
+correct:2,
+e:"Same unit provides both functions."},
+
+{q:"A bus tie allows:",
+a:["Hydraulic mixing","Power sharing between buses","Fuel balancing","Rotor braking"],
+correct:1,
+e:"Bus ties permit alternate power routing."},
+
+{q:"Loss of all generators leaves power from:",
+a:["Hydraulics","Batteries only","Fuel pumps","AFCS"],
+correct:1,
+e:"Batteries provide temporary emergency power."},
+
+{q:"Voltage regulation ensures:",
+a:["Constant RPM","Stable system voltage","Higher torque","Cooler fuel"],
+correct:1,
+e:"Regulators keep voltage within limits for avionics protection."},
+
+{q:"Static inverters are most critical for:",
+a:["Flight control hydraulics","AC-powered avionics/instruments","Fuel pumps","Oil cooling"],
+correct:1,
+e:"They provide AC supply for essential avionics."},
+
+{q:"Electrical failures are prioritised by:",
+a:["Noise level","Essential vs non-essential classification","Colour of wiring","Fuel level"],
+correct:1,
+e:"Essential systems remain powered first."},
+
+{q:"Battery charging occurs when:",
+a:["Rotor stopped","Generators online","Only external power used","During shutdown only"],
+correct:1,
+e:"Generators recharge batteries during normal ops."},
+
+{q:"A burning electrical smell suggests:",
+a:["Normal heating","Possible wiring fault","Low fuel","Hydraulic cavitation"],
+correct:1,
+e:"Indicates potential electrical overheating or short circuit."},
+
+{q:"Electrical redundancy mainly improves:",
+a:["Speed","Comfort","Reliability and safety","Range only"],
+correct:2,
+e:"Multiple power sources ensure continued operation after faults."}
 ]
 
 };
